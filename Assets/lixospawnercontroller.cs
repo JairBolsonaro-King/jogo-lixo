@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class lixospawnercontroller : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class lixospawnercontroller : MonoBehaviour
     public GameObject Lixo;
     public int MaxPoints;
     public int points = 0;
+
+    public TMP_Text pointsText;
 
     void Start()
     {
@@ -34,4 +37,10 @@ public class lixospawnercontroller : MonoBehaviour
             yield return new WaitForSeconds(timer);
         }
     }
+
+public void AddToPoints(int value)
+{
+    points += value;
+    pointsText.text = "Points: "+points.ToString();
+}
 }
